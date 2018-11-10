@@ -23,7 +23,7 @@ class InfoCard extends Component {
     const style = {
       // padding: 10,
       // maxWidth: 300,
-      margin: 20,
+      margin: 5,
     }
     const card = {
       display: 'flex',
@@ -103,7 +103,6 @@ class CardList extends Component {
     .then(data => this.setState({ storages: data }));
     }
 
- 
   render() {
     const listStyle = {
       maxWidth: 600,
@@ -111,7 +110,8 @@ class CardList extends Component {
       display: 'flex', 
       overflow: 'scroll',
       maxHeight: '100vh',
-      marginTop: '20px',
+      marginTop: '5px',
+      backgroundColor: '#eee',
     }
     const infoCards = this.state.storages.map((storage) => (
       <GridListTile style={{ height: 'auto' }}>
@@ -182,11 +182,11 @@ class App extends Component {
     return(
       <div>
         <ButtonAppBar></ButtonAppBar>
-        <Grid container spacing={12}>
-          <Grid item xs={6}>
+        <Grid container spacing={0}>
+          <Grid item xs={4}>
             <CardList></CardList>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={8}>
             <MapContainer></MapContainer>
           </Grid>
         </Grid>
