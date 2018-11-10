@@ -9,11 +9,12 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Typography from '@material-ui/core/Typography';
-import { CardMedia } from '@material-ui/core';
+import { CardMedia, Grid } from '@material-ui/core';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import placeholder from './place-holder.jpg';
 import ButtonAppBar from './NavBar';
+import MapContainer from './MapContainer';
 
 //The single card that shows information of a single storage place
 class InfoCard extends Component {
@@ -181,7 +182,14 @@ class App extends Component {
     return(
       <div>
         <ButtonAppBar></ButtonAppBar>
-        <CardList></CardList>
+        <Grid container spacing={12}>
+          <Grid item xs={6}>
+            <CardList></CardList>
+          </Grid>
+          <Grid item xs={6}>
+            <MapContainer></MapContainer>
+          </Grid>
+        </Grid>
       </div>
     )
   }

@@ -28,7 +28,7 @@ app.use(function (req, res, next) {
 
 
 // Build the DB connection
-mongoose.connect('mongodb://localhost/ninjago');
+mongoose.connect('mongodb://r0b3rt23:madhacks2018@ds159263.mlab.com:59263/madhouse');
 mongoose.Promise = global.Promise;
 
 
