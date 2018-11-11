@@ -5,6 +5,16 @@ const mongoose = require('mongoose');
 
 //set up express app
 const app = express();
+passport = require('passport'),
+auth = require('./auth');
+cookieParser = require('cookie-parser'),
+cookieSession = require('cookie-session');
+
+app.use(cookieSession({
+    name: 'session',
+    keys: ['123']
+}));
+app.use(cookieParser());
 
 // Add headers
 app.use(function (req, res, next) {
@@ -37,6 +47,39 @@ Use the middle ware that we created
 */
 app.use(bodyParser.json());
 app.use('/api',routes);
+
+auth(passport);
+app.use(passport.initialize());
+app.get('/', (req, res) => {
+    if (req.session.token) {
+        res.cookie('token', req.session.token);
+        res.json({
+            status: 'session cookie set'
+        });
+    } else {
+        res.cookie('token', '')
+        res.json({
+            status: 'session cookie not set'
+        });
+    }
+});
+app.get('/auth/google', passport.authenticate('google', {
+    scope: ['https://www.googleapis.com/auth/userinfo.profile']
+}));
+
+app.get('/auth/google/callback',
+    passport.authenticate('google', {failureRedirect:'/'}),
+    (req, res) => {
+        req.session.token = req.user.token;
+        res.redirect('/');
+    }
+);
+
+app.get('/logout', (req, res) => {
+    req.logout();
+    req.session = null;
+    res.redirect('/');
+});
 
 // error handling 
 app.use((err, req, res, next)=>{

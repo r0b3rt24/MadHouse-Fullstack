@@ -9,6 +9,7 @@
     "google-maps-react": "^2.0.2",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
+    "react-geolocated": "^2.4.0",
     "react-scripts": "1.1.5"
   },
   "scripts": {

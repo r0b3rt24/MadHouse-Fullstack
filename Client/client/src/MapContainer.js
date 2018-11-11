@@ -1,35 +1,41 @@
+import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import React, { Component } from 'react';
-import GoogleMapReact from 'google-map-react';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
-class MapContainer extends Component {
-  static defaultProps = {
-    center: {
-      lat: 59.95,
-      lng: 30.33
-    },
-    zoom: 11
-  };
+export class MapContainer extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          storages: [],
+        }
+      }
+    
+      componentDidMount() {
+        fetch('http://localhost:4000/api/storages')
+        .then(result => result.json())
+        .then(data => this.setState({ storages: data }));
+        };
+    
 
-  render() {
-    return (
-      // Important! Always set the container height explicitly
-      <div style={{ height: '100vh', width: '100%' }}>
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: "AIzaSyDoTB3OYmLEpFlrL_2XcRMtRtizQIkNX_s"}}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
+    render() {
+
+    const Markers = this.state.storages.map((storage) => (
+        <Marker
+            name={storage.name}
+            position={{ lat: storage.geometry.coordinates[0], lng: storage.geometry.coordinates[1]}}
         >
-          <AnyReactComponent
-            lat={59.955413}
-            lng={30.337844}
-            text={'Kreyser Avrora'}
-          />
-        </GoogleMapReact>
-      </div>
+        </Marker>))
+    return (
+      <Map
+      centerAroundCurrentLocation 
+      google={this.props.google} zoom={14}>
+        {Markers}
+      </Map>
     );
   }
 }
 
-export default MapContainer;
+export default GoogleApiWrapper({
+  apiKey: ("AIzaSyDoTB3OYmLEpFlrL_2XcRMtRtizQIkNX_s")
+})(MapContainer)
+
