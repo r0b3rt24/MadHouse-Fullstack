@@ -10,11 +10,16 @@ const cors = require("cors");
 const session = require('express-session');
 const path = require('path');
 const errorHandler = require('errorhandler');
-const keys = require('./configs/keys')
+const keys = require('./configs/keys');
+const authRoutes = require("./routes/auth-routes");
 
 
 //set up express app
 const app = express();
+
+// set up view engine
+app.set("view engine", 'ejs');
+
 
 // configure the app
 app.use(cors());
@@ -46,7 +51,9 @@ app.use(function (req, res, next) {
 
 
 // Build the DB connection
-mongoose.connect(keys.mongodb.dbURI);
+mongoose.connect(keys.mongodb.dbURI, ()=>{
+    console.log("connected to the database");
+});
 mongoose.Promise = global.Promise;
 
 
@@ -55,6 +62,7 @@ Use the middle ware that we created
 */
 app.use(bodyParser.json());
 app.use('/storages',routes);
+app.use('/auth', authRoutes); 
 
 // error handling 
 app.use((err, req, res, next)=>{
@@ -68,7 +76,7 @@ listen for requests
 either on env.port or 4000
 */
 app.listen(process.env.port || 4000, function(){
-    console.log("Now listening for requests")
+    console.log("Now listening for requests on port 3000")
 })
 
 

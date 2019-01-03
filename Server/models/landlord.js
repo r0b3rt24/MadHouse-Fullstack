@@ -2,20 +2,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 /* 
 {
-  username: 'Dog',
   id: '1ds1fs7sdfnas',
-  password: '********', // encrypted 
-  lastName: 'Wang',
-  firstName: 'Donglin',
   assets: [ // array asset id
     "1dewr7sad8ads", "a6s7d8sa68d7sa",
   ],
   orders: [ // array of order id
     "1dewr7sad8ads", "a6s7d8sa68d7sa",
   ],
-  registerdate: date,
-  phone: "6084403075",
-  email: "hcao29@wisc.edu",
 }
 
 Landlord */
