@@ -10,6 +10,7 @@ const cors = require("cors");
 const session = require('express-session');
 const path = require('path');
 const errorHandler = require('errorhandler');
+const keys = require('./configs/keys')
 
 
 //set up express app
@@ -45,7 +46,7 @@ app.use(function (req, res, next) {
 
 
 // Build the DB connection
-mongoose.connect('mongodb://r0b3rt23:madhacks2018@ds159263.mlab.com:59263/madhouse');
+mongoose.connect(keys.mongodb.dbURI);
 mongoose.Promise = global.Promise;
 
 
