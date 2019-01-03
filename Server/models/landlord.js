@@ -41,7 +41,7 @@ const landlordSchema = new Schema({
 })
 
 // represent a collection called Storage by MongoDB
-const landlord = mongoose.model('storage', StorageSchema);
+const landlord = mongoose.model('landlord', landlordSchema);
 
 //Export it
 module.exports = landlord;

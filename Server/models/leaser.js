@@ -20,6 +20,6 @@ const leaserSchema = new Schema({
     id: String,
 });
 
-const User = mongoose.model('user', userSchema);
+const Leaser = mongoose.model('leaser', leaserSchema);
 
-module.exports = User;
+module.exports = Leaser;
