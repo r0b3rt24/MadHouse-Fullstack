@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const orderSchema = require("./order");
 /* 
 {
   id: '1ds1fs7sdfnas',
@@ -27,7 +28,10 @@ const landlordSchema = new Schema({
         type: String, 
         required: true,
     },
-    registerdate: Date,
+    registerdate: {
+        type: Date,
+        default: Date.now
+    },
     phone: {
         type: String, 
         required: true,
@@ -35,9 +39,8 @@ const landlordSchema = new Schema({
     email: {
         type: String, 
         required: true,
-    }
-    
-
+    },
+    order: [orderSchema]
 })
 
 // represent a collection called Storage by MongoDB
