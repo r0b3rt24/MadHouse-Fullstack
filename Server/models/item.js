@@ -4,8 +4,6 @@ const leaser = require('./leaser');
 
 
 const ItemSchema = new Schema({
-    /* Item */
-
     owner: {
         type: LeaserSchema,
         required: [true, 'Owner field required.']
@@ -18,28 +16,22 @@ const ItemSchema = new Schema({
         type: String,
         required: [true, 'Description field required.']
     },
-    dimensions:{
-        type:[Number], // width, height, depth
-        required: [true, 'Dimensions required.']
-    },
+    dimensions:[{
+        height: Number,
+        width: Number,
+        lendgth: Number,
+    }],
+    
     weight: Number,
-    handling: {
-        type: HandleSchema,
-        required: [true, 'Handling info required.']
-    },
+    handling: [{
+        ifStackble: Boolean,
+        fragile: Boolean,
+        dry: Boolean,
+        temptrature: Number,
+    }],
  
 });
 
-const HandleSchema = new Schema({
-    ifStackble: {
-        type: Boolean,
-        required: [true, 'Specify whether item is stackable.']
-    }, 
-    fragile: Boolean,
-    dry: Boolean,
-    temptrature: Number,
-
-});
 
 const Item = mongoose.model('item', ItemSchema);
 
