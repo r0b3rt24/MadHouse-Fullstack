@@ -1,6 +1,6 @@
 // request Modules from node.js
 const express = require('express');
-const routes = require('./routes/storages');
+const storage = require('./routes/storage-routes');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const passport = require('passport');
@@ -61,8 +61,12 @@ mongoose.Promise = global.Promise;
 Use the middle ware that we created 
 */
 app.use(bodyParser.json());
-app.use('/storages',routes);
-app.use('/auth', authRoutes); 
+
+//  routers
+app.use('/storages',storage);
+app.use('/auth', authRoutes);
+
+
 
 // error handling 
 app.use((err, req, res, next)=>{
