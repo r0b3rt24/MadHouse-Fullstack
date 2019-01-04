@@ -5,6 +5,8 @@ const leaserSchema = require("./leaser");
 
 
 const userSchema = new Schema({
+    landlord: landlordSchema,
+    leaser: leaserSchema,
     googleid: String,
     username: {
         type: String,
