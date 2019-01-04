@@ -1,5 +1,6 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const orderSchema = require("./order");
 
 /*
 {
@@ -16,8 +17,12 @@ const Schema = mongoose.Schema;
 
 
 const leaserSchema = new Schema({
-    username: String,
+    username: {
+        type: String,
+        required: [true, "username is required"],
+    },
     id: String,
+    orders: [orderSchema],
 });
 
 const Leaser = mongoose.model('leaser', leaserSchema);
