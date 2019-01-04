@@ -9,9 +9,10 @@ Comment */
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const orderSchema = require('./order');
 
 const commentSchema = new Schema({
-    order: String,
+    order: orderSchema,
     rating: Number,
     comment: String,
     date: Date, 
