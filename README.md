@@ -1,7 +1,5 @@
-# MadHouseHR (A winner project of MadHacks2018)
+# MadHouse
 
-Since that I intent to make MadHouse become a startup company eventually, I don't want to go completly open source.
-This repository is only for internship hunting summer 2019. 
 
 ![ScreenShot1](ScreenShot1.png)
 
