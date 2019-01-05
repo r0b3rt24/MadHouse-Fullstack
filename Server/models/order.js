@@ -25,11 +25,13 @@ const leaserSchema = require("./leaser");
 
 const orderSchema = new Schema({
     landlord: {
-      type: landlordSchema,
+      type: Schema.Types.ObjectId,
+      ref: landlordSchema,
       required: true
     },
     leaser: {
-      type: leaserSchema,
+      type: Schema.Types.ObjectId,
+      ref: leaserSchema,
       required: true
     },
     startDate: Date,

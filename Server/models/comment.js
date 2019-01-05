@@ -1,3 +1,7 @@
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const orderSchema = require('./order');
+
 /* 
 {
     order: '',  // id of order
@@ -7,13 +11,11 @@
   }
 Comment */
 
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-const orderSchema = require('./order');
 
 const commentSchema = new Schema({
     order: {
-        type: orderSchema,
+        type: Schema.Types.ObjectId,
+        ref: orderSchema,
         required: [true, "orderSchema is required"]
     },
     rating: {

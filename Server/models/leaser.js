@@ -22,7 +22,10 @@ const leaserSchema = new Schema({
         required: [true, "username is required"],
     },
     id: String,
-    orders: [orderSchema],
+    order: [{
+        type: Schema.Types.ObjectId,
+        ref: orderSchema,
+    }]
 });
 
 const Leaser = mongoose.model('leaser', leaserSchema);

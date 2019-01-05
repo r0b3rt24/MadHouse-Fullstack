@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const orderSchema = require("./order");
+
 /* 
 {
   id: '1ds1fs7sdfnas',
@@ -40,12 +41,15 @@ const landlordSchema = new Schema({
         type: String, 
         required: true,
     },
-    order: [orderSchema]
+    order: [{
+        type: Schema.Types.ObjectId,
+        ref: orderSchema,
+    }]
 })
 
 // represent a collection called Storage by MongoDB
-const landlord = mongoose.model('landlord', landlordSchema);
+const Landlord = mongoose.model('landlord', landlordSchema);
 
 //Export it
-module.exports = landlord;
+module.exports = Landlord;
 
