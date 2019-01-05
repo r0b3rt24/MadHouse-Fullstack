@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema;
-// const landlordSchema = require("./landlord");
+const landlordSchema = require("./landlord");
 // const leaserSchema = require("./leaser");
 
 

@@ -24,19 +24,17 @@ const leaserSchema = require("./leaser");
 
 
 const orderSchema = new Schema({
-    landlord: {
-      type: Schema.Types.ObjectId,
-      ref: landlordSchema,
-      required: true
-    },
-    leaser: {
-      type: Schema.Types.ObjectId,
-      ref: leaserSchema,
-      required: true
-    },
     startDate: Date,
     endDate: Date,
     comment: String,
+    leaser: {
+      type: Schema.Types.ObjectId,
+      ref: leaserSchema,
+    },
+    // landlord: {
+    //   type: Schema.Types.ObjectId,
+    //   ref: landlordSchema,
+    // }
 });
 
 const Order = mongoose.model('order', orderSchema);

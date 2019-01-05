@@ -41,7 +41,7 @@ const landlordSchema = new Schema({
         type: String, 
         required: true,
     },
-    order: [{
+    orders: [{
         type: Schema.Types.ObjectId,
         ref: orderSchema,
     }]
