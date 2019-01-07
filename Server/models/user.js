@@ -1,18 +1,18 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema;
 const landlordSchema = require("./landlord");
-// const leaserSchema = require("./leaser");
+const leaserSchema = require("./leaser");
 
 
 const userSchema = new Schema({
-    // landlord: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: landlordSchema
-    // },
-    // leaser: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: leaserSchema
-    // },
+    landlord: {
+        type: Schema.Types.ObjectId,
+        ref: landlordSchema
+    },
+    leaser: {
+        type: Schema.Types.ObjectId,
+        ref: leaserSchema
+    },
     googleid: String,
     username: {
         type: String,
