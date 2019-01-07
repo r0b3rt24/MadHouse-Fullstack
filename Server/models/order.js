@@ -29,7 +29,7 @@ const orderSchema = new Schema({
     comment: String,
     leaser: {
       type: Schema.Types.ObjectId,
-      ref: leaserSchema,
+      // ref: leaserSchema,
     },
     // landlord: {
     //   type: Schema.Types.ObjectId,

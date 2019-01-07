@@ -7,11 +7,11 @@ const leaserSchema = require("./leaser");
 const userSchema = new Schema({
     landlord: {
         type: Schema.Types.ObjectId,
-        ref: landlordSchema
+        // ref: landlordSchema
     },
     leaser: {
         type: Schema.Types.ObjectId,
-        ref: leaserSchema
+        // ref: leaserSchema
     },
     googleid: String,
     username: {

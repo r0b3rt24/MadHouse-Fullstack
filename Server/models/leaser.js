@@ -24,7 +24,7 @@ const leaserSchema = new Schema({
     id: String,
     order: [{
         type: Schema.Types.ObjectId,
-        ref: orderSchema,
+        // ref: orderSchema,
     }]
 });
 
