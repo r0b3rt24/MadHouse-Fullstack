@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const orderSchema = require("./order");
+const userSchema = require("./user");
 
 /* 
 {
@@ -17,29 +18,9 @@ Landlord */
 
 //creates Storage Schema & model
 const landlordSchema = new Schema({
-    username: {
-        type: String,
-        required: [true, 'username field is required'],
-    },
-    firstname: {
-        type: String, 
-        required: true,
-    },
-    lastname: {
-        type: String, 
-        required: true,
-    },
-    registerdate: {
-        type: Date,
-        default: Date.now
-    },
-    phone: {
-        type: String, 
-        required: true,
-    },
-    email: {
-        type: String, 
-        required: true,
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: uderSchema,
     },
     orders: [{
         type: Schema.Types.ObjectId,
