@@ -20,7 +20,7 @@ Landlord */
 const landlordSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
-        ref: uderSchema,
+        ref: userSchema,
     },
     orders: [{
         type: Schema.Types.ObjectId,

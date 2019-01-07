@@ -31,10 +31,10 @@ const orderSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: leaserSchema,
     },
-    landlord: {
-      type: Schema.Types.ObjectId,
-      ref: landlordSchema,
-    }
+    // landlord: {
+    //   type: Schema.Types.ObjectId,
+    //   ref: landlordSchema,
+    // }
 });
 
 const Order = mongoose.model('order', orderSchema);
