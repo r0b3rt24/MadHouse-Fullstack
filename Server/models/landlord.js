@@ -1,7 +1,6 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const orderSchema = require("./order");
-const userSchema = require("./user");
 
 /* 
 {
@@ -18,19 +17,40 @@ Landlord */
 
 //creates Storage Schema & model
 const landlordSchema = new Schema({
-    user: {
-        type: Schema.Types.ObjectId,
-        // ref: userSchema,
-    },
-    orders: [{
-        type: Schema.Types.ObjectId,
-        // ref: orderSchema,
-    }]
-})
+  username: {
+    type: String,
+    required: [true, "username field is required"]
+  },
+  firstname: {
+    type: String,
+    required: true
+  },
+  lastname: {
+    type: String,
+    required: true
+  },
+  registerdate: {
+    type: Date,
+    default: Date.now
+  },
+  phone: {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true
+  },
+  orders: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "order"
+    }
+  ]
+});
 
 // represent a collection called Storage by MongoDB
-const Landlord = mongoose.model('landlord', landlordSchema);
+const Landlord = mongoose.model("landlord", landlordSchema);
 
 //Export it
 module.exports = Landlord;
-

@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const landlordSchema = require("./landlord");
 const leaserSchema = require("./leaser");
@@ -22,21 +22,20 @@ const leaserSchema = require("./leaser");
 
    Order */
 
-
 const orderSchema = new Schema({
-    startDate: Date,
-    endDate: Date,
-    comment: String,
-    leaser: {
-      type: Schema.Types.ObjectId,
-      // ref: leaserSchema,
-    },
-    // landlord: {
-    //   type: Schema.Types.ObjectId,
-    //   ref: landlordSchema,
-    // }
+  startDate: Date,
+  endDate: Date,
+  comment: String,
+  leaser: {
+    type: Schema.Types.ObjectId,
+    ref: "leaser"
+  }
+  // landlord: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: landlordSchema,
+  // }
 });
 
-const Order = mongoose.model('order', orderSchema);
+const Order = mongoose.model("order", orderSchema);
 
 module.exports = Order;

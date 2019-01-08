@@ -15,19 +15,20 @@ const orderSchema = require("./order");
   }
 */
 
-
 const leaserSchema = new Schema({
-    username: {
-        type: String,
-        required: [true, "username is required"],
-    },
-    id: String,
-    order: [{
-        type: Schema.Types.ObjectId,
-        // ref: orderSchema,
-    }]
+  username: {
+    type: String,
+    required: [true, "username is required"]
+  },
+  id: String,
+  order: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "order"
+    }
+  ]
 });
 
-const Leaser = mongoose.model('leaser', leaserSchema);
+const Leaser = mongoose.model("leaser", leaserSchema);
 
 module.exports = Leaser;
