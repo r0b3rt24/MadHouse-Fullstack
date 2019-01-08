@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const orderSchema = require('./order');
-
 /* 
 {
     order: '',  // id of order
@@ -15,7 +13,7 @@ Comment */
 const commentSchema = new Schema({
     order: {
         type: Schema.Types.ObjectId,
-        // ref: orderSchema,
+        ref: order,
         required: [true, "orderSchema is required"]
     },
     rating: {

@@ -1,12 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const leaser = require('./leaser');
 
 
 const ItemSchema = new Schema({
-    owner: {
-        type: LeaserSchema,
-        required: [true, 'Owner field required.']
+    landlord: {
+        type: Schema.Types.ObjectId,
+        ref: landlord
     },
     name: {
         type: String,

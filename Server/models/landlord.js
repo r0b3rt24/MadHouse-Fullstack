@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const orderSchema = require("./order");
-const userSchema = require("./user");
 
 /* 
 {
@@ -20,11 +18,11 @@ Landlord */
 const landlordSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
-        // ref: userSchema,
+        ref: user,
     },
     orders: [{
         type: Schema.Types.ObjectId,
-        // ref: orderSchema,
+        ref: order,
     }]
 })
 

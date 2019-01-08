@@ -1,7 +1,5 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema;
-const landlordSchema = require("./landlord");
-const leaserSchema = require("./leaser");
 
 /*
 {
@@ -29,12 +27,12 @@ const orderSchema = new Schema({
     comment: String,
     leaser: {
       type: Schema.Types.ObjectId,
-      // ref: leaserSchema,
+      ref: leaser,
     },
-    // landlord: {
-    //   type: Schema.Types.ObjectId,
-    //   ref: landlordSchema,
-    // }
+    landlord: {
+      type: Schema.Types.ObjectId,
+      ref: landlord,
+    }
 });
 
 const Order = mongoose.model('order', orderSchema);
