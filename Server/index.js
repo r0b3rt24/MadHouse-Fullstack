@@ -1,6 +1,6 @@
 // request Modules from node.js
 const express = require('express');
-const storage = require('./routes/storage-routes');
+const storageRoutes = require('./routes/storage-routes');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const passport = require('passport');
@@ -12,6 +12,7 @@ const path = require('path');
 const errorHandler = require('errorhandler');
 const keys = require('./configs/keys');
 const authRoutes = require("./routes/auth-routes");
+const userRoutes = require("./routes/user-routes");
 
 
 //set up express app
@@ -63,7 +64,8 @@ Use the middle ware that we created
 app.use(bodyParser.json());
 
 //  routers
-app.use('/storages',storage);
+app.use('/storages',storageRoutes);
+app.use('/users',userRoutes);
 app.use('/auth', authRoutes);
 
 
