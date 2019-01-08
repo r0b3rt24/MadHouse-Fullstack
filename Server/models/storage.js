@@ -36,6 +36,7 @@ const StorageSchema = new Schema({
     name: {
         type: String,
         required: [true, 'Name field is required'],
+        unique: true,
     },
     address: {
         type: String,

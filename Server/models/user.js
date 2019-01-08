@@ -15,6 +15,7 @@ const userSchema = new Schema({
     username: {
         type: String,
         required: [true, 'username field is required'],
+        unique: true,
     },
     firstname: {
         type: String, 

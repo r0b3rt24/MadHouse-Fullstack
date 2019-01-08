@@ -25,6 +25,10 @@ const orderSchema = new Schema({
     startDate: Date,
     endDate: Date,
     comment: String,
+    status: {
+      type: String,
+      enum: ['Pending', 'Ongoing', 'Ended', 'Issue']
+    },
     leaser: {
       type: Schema.Types.ObjectId,
       ref: leaser,

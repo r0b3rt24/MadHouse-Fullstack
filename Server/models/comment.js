@@ -14,7 +14,8 @@ const commentSchema = new Schema({
     order: {
         type: Schema.Types.ObjectId,
         ref: order,
-        required: [true, "orderSchema is required"]
+        required: [true, "orderSchema is required"],
+        unique: true
     },
     rating: {
         type: Number,
