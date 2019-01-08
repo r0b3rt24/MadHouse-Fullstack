@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const ItemSchema = new Schema({
     landlord: {
         type: Schema.Types.ObjectId,
-        ref: landlord
+        ref: 'landlord'
     },
     name: {
         type: String,

@@ -13,6 +13,7 @@ const errorHandler = require('errorhandler');
 const keys = require('./configs/keys');
 const authRoutes = require("./routes/auth-routes");
 const userRoutes = require("./routes/user-routes");
+const itemRoutes = require("./routes/item-routes");
 
 
 //set up express app
@@ -67,6 +68,7 @@ app.use(bodyParser.json());
 app.use('/storages',storageRoutes);
 app.use('/users',userRoutes);
 app.use('/auth', authRoutes);
+app.use('/item', itemRoutes);
 
 
 

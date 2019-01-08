@@ -17,6 +17,8 @@ router.get("/:id", (req, res) => {
       res.status(404).send("User not found");
     });
 });
+
+
 router.post("/register", (req, res) => {
   User.findOne({ email: req.body.email }).then(userInfo => {
     if (userInfo) {
