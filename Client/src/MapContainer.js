@@ -36,7 +36,7 @@ export class MapContainer extends Component {
       }
     
       componentDidMount() {
-        fetch('http://localhost:4000/api/storages')
+        fetch('http://localhost:4000/storages/storages')
         .then(result => result.json())
         .then(data => this.setState({ storages: data }));
         };
