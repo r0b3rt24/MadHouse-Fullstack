@@ -14,6 +14,8 @@ const keys = require('./configs/keys');
 const authRoutes = require("./routes/auth-routes");
 const userRoutes = require("./routes/user-routes");
 const itemRoutes = require("./routes/item-routes");
+const orderRoutes = require("./routes/order-routes");
+const commentRoutes = require("./routes/comment-routes")
 
 
 //set up express app
@@ -69,7 +71,8 @@ app.use('/storages',storageRoutes);
 app.use('/users',userRoutes);
 app.use('/auth', authRoutes);
 app.use('/item', itemRoutes);
-
+app.use('/order', orderRoutes);
+app.use('/comment', commentRoutes);
 
 
 // error handling 
