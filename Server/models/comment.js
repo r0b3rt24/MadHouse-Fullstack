@@ -13,7 +13,7 @@ Comment */
 const commentSchema = new Schema({
     order: {
         type: Schema.Types.ObjectId,
-        ref: order,
+        ref: "order",
         required: [true, "orderSchema is required"],
         unique: true
     },

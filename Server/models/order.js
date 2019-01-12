@@ -31,11 +31,11 @@ const orderSchema = new Schema({
     },
     leaser: {
       type: Schema.Types.ObjectId,
-      ref: leaser,
+      ref: "leaser",
     },
     landlord: {
       type: Schema.Types.ObjectId,
-      ref: landlord,
+      ref: "landlord",
     }
 });
 
