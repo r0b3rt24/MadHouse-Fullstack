@@ -1,0 +1,36 @@
+@import url("https://use.typekit.net/emc6bqr.css");
+
+.text{
+    font-family: proxima-nova, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 32pt ;
+}
+
+.display{
+    font-family: proxima-nova, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 72pt ;
+}
+
+nav{
+    display: block;
+    height: 75px;
+    line-height: 75px;
+    box-shadow: 20px 10px 40px rgba(131, 131, 131, 0.5);
+
+
+}
+
+span{
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 30px;
+    color: #71bad3
+}
+
+#logo-caption{
+    
+    color: #71bad3;
+}

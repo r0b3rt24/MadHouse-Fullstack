@@ -3,7 +3,7 @@ const passport = require("passport");
 
 // auth login
 router.get('/login', (req, res) =>{
-    res.sned('login page');
+    res.send('login page');
 });
 
 // auth logout
