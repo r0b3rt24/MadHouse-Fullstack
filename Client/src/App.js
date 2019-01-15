@@ -15,6 +15,69 @@ import GridListTile from '@material-ui/core/GridListTile';
 import placeholder from './place-holder.jpg';
 import ButtonAppBar from './NavBar';
 import MapContainer from './MapContainer';
+import "./App.css"
+import TextField from '@material-ui/core/TextField';
+import Autocomplete from 'react-google-autocomplete';
+
+
+
+
+// filter is a card component resides in the sidebar
+class Filter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'testName'
+    }
+  }
+  render() {
+    return (
+      <div className="Filter">
+
+        <form>
+          <Autocomplete
+            style={{ width: '90%' }}
+            onPlaceSelected={(place) => {
+              console.log(place);
+            }}
+            types={['(regions)']}
+            componentRestrictions={{ country: "ru" }}
+          />
+          <Grid container spacing={24}>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                label="Where"
+                value='Madison'
+                margin="normal"
+                fullWidth
+              /></Grid>
+            <Grid item xs>
+              <TextField
+                id='startDate'
+                type='date'
+                variant="outlined"
+                label="Start Dtae"
+                defaultValue="2017-05-24"
+                margin="normal"
+              />
+            </Grid>
+            <Grid item xs>
+              <TextField
+                id='endDate'
+                type='date'
+                variant="outlined"
+                label="End Dtae"
+                defaultValue="2017-05-25"
+                margin="normal"
+              />
+            </Grid>
+          </Grid>
+        </form>
+      </div>
+    )
+  }
+}
 
 //The single card that shows information of a single storage place
 class InfoCard extends Component {
@@ -99,15 +162,15 @@ class CardList extends Component {
   componentDidMount() {
     console.log("mounting");
     fetch('http://localhost:4000/storages/storages')
-    .then(result => result.json())
-    .then(data => this.setState({ storages: data }));
-    }
+      .then(result => result.json())
+      .then(data => this.setState({ storages: data }));
+  }
 
   render() {
     const listStyle = {
       maxWidth: 600,
       minWidth: 300,
-      display: 'flex', 
+      display: 'flex',
       overflow: 'scroll',
       maxHeight: '100vh',
       marginTop: '5px',
@@ -126,8 +189,9 @@ class CardList extends Component {
     )
     return (
       <div>
+        <Filter></Filter>
         <GridList cols={1} style={listStyle}>
-            {infoCards}
+          {infoCards}
         </GridList>
       </div>
     );
@@ -178,8 +242,8 @@ class MoreInfoDialogs extends Component {
 }
 
 class App extends Component {
-  render(){
-    return(
+  render() {
+    return (
       <div>
         <ButtonAppBar></ButtonAppBar>
         <Grid container spacing={0}>
