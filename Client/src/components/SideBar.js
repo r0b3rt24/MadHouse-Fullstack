@@ -12,108 +12,159 @@ import Typography from "@material-ui/core/Typography";
 import { CardMedia, Grid, Paper } from "@material-ui/core";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
-import placeholder from "./place-holder.jpg";
+import placeholder from "../place-holder.jpg";
 import ButtonAppBar from "./NavBar";
 import MapContainer from "./MapContainer";
-import "./App.css";
+import "./SideBar.css";
 import TextField from "@material-ui/core/TextField";
 import Geosuggest from "react-geosuggest";
 
 // filter is a card component resides in the sidebar
+// TO-DO : handle save states
 class Filter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: "testName"
-    };
+  state = {
+    isOpen: true,
+    Where: '',
+    Small: 0,
+    Medium: 0,
+    Large: 0,
+    startDate: null,
+    endDate: null,
+  };
+
+  onSubmit = () =>{
+
   }
+
+  clearTheForm = () => {
+
+  }
+
+  handleFormOpen = () => {
+    this.setState({ isOpen: true });
+  };
+
+  handleFormHide = () => {
+    this.setState({ isOpen: false });
+  };
+
   render() {
-    return (
-      <Paper>
-        <div className="Filter">
-          <form>
-            {/* <Geosuggest /> */}
-            <Grid container spacing={24}>
-              <Grid item xs>
-                <TextField
-                  variant="outlined"
-                  label="Where"
-                  margin="none"
-                  fullWidth
-                  InputLabelProps={{ shrink: true }}
-                />
-              </Grid>
-            </Grid>
-            <Grid container spacing={24}>
-              <Grid item xs>
-                <TextField
-                  id="startDate"
-                  type="date"
-                  variant="outlined"
-                  label="Start Dtae"
-                  margin="none"
-                  InputLabelProps={{ shrink: true }}
-                />
-              </Grid>
-              <Grid item xs>
-                <TextField
-                  id="endDate"
-                  type="date"
-                  variant="outlined"
-                  label="End Dtae"
-                  margin="none"
-                  InputLabelProps={{ shrink: true }}
-                />
-              </Grid>
-            </Grid>
-            <Grid container spacing={24}>
-              <Grid item xs>
-                <TextField
-                  id="outlined-number"
-                  label="Small"
-                  type="number"
-                  margin="none"
-                  variant="outlined"
-                  InputLabelProps={{ shrink: true }}
-                />
-              </Grid>
-              <Grid item xs>
-                <TextField
-                  id="outlined-number"
-                  label="Medium"
-                  type="number"
-                  margin="none"
-                  variant="outlined"
-                  InputLabelProps={{ shrink: true }}
-                />
-              </Grid>
-              <Grid item xs>
-                <TextField
-                  id="outlined-number"
-                  label="Large"
-                  type="number"
-                  margin="none"
-                  variant="outlined"
-                  InputLabelProps={{ shrink: true }}
-                />
-              </Grid>
-            </Grid>
-            <Grid container spacing={24}>
-              <Grid item>
-                <Button className="FilterButton" variant="outlined" color="secondary">
-                  Clear
-                </Button>
-              </Grid>
-              <Grid item>
-                <Button className="FilterButton" variant="outlined" color="primary">
-                  Search
-                </Button>
-              </Grid>
-            </Grid>
-          </form>
+    if (!this.state.isOpen) {
+      return (
+        <Paper>
+        <div className="Filter" color="primary" variant="outlined">
+          <Button onClick={this.handleFormOpen} fullWidth>
+            Show Filter
+          </Button>
         </div>
       </Paper>
-    );
+      )
+    } else {
+      return (
+        <Paper>
+          <div className="Filter">
+            <form onSubmit={this.onSubmit}>
+              {/* <Geosuggest /> */}
+              <Grid container spacing={24}>
+                <Grid item xs>
+                  <TextField
+                    variant="outlined"
+                    label="Where"
+                    margin="none"
+                    fullWidth
+                    InputLabelProps={{ shrink: true }}
+                  />
+                </Grid>
+              </Grid>
+              <Grid container spacing={24}>
+                <Grid item xs>
+                  <TextField
+                    id="startDate"
+                    type="date"
+                    variant="outlined"
+                    label="Start Dtae"
+                    margin="none"
+                    InputLabelProps={{ shrink: true }}
+                  />
+                </Grid>
+                <Grid item xs>
+                  <TextField
+                    id="endDate"
+                    type="date"
+                    variant="outlined"
+                    label="End Dtae"
+                    margin="none"
+                    InputLabelProps={{ shrink: true }}
+                  />
+                </Grid>
+              </Grid>
+              <Grid container spacing={24}>
+                <Grid item xs>
+                  <TextField
+                    id="outlined-number"
+                    label="Small"
+                    type="number"
+                    margin="none"
+                    variant="outlined"
+                    InputLabelProps={{ shrink: true }}
+                  />
+                </Grid>
+                <Grid item xs>
+                  <TextField
+                    id="outlined-number"
+                    label="Medium"
+                    type="number"
+                    margin="none"
+                    variant="outlined"
+                    InputLabelProps={{ shrink: true }}
+                  />
+                </Grid>
+                <Grid item xs>
+                  <TextField
+                    id="outlined-number"
+                    label="Large"
+                    type="number"
+                    margin="none"
+                    variant="outlined"
+                    InputLabelProps={{ shrink: true }}
+                  />
+                </Grid>
+              </Grid>
+              <Grid container spacing={24}>
+                <Grid item>
+                  <Button
+                    className="FilterButton"
+                    variant="outlined"
+                    color="secondary"
+                  >
+                    Clear
+                  </Button>
+                </Grid>
+                <Grid item>
+                  <Button
+                    className="FilterButton"
+                    variant="outlined"
+                    color="primary"
+                  >
+                    Search
+                  </Button>
+                </Grid>
+                <Grid item>
+                  <Button
+                    className="FilterButton"
+                    variant="outlined"
+                    color="primary"
+                    onClick={this.handleFormHide}
+                  >
+                    Hide Filter
+                  </Button>
+                </Grid>
+              </Grid>
+            </form>
+          </div>
+        </Paper>
+      );
+    }
   }
 }
 
@@ -279,7 +330,7 @@ class MoreInfoDialogs extends Component {
   }
 }
 
-class App extends Component {
+class SideBar extends Component {
   render() {
     return (
       <div>
@@ -296,4 +347,4 @@ class App extends Component {
     );
   }
 }
-export default App;
+export default SideBar;
