@@ -33,14 +33,15 @@ class Filter extends Component {
     return (
       <div className="Filter">
         <form>
-          <Geosuggest/>
           <Grid container spacing={24}>
+            <Geosuggest/>
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
                 label="Where"
-                margin="normal"
+                margin="dense"
                 fullWidth
+                InputLabelProps={{ shrink: true }}
               /></Grid>
             <Grid item xs>
               <TextField
@@ -48,7 +49,8 @@ class Filter extends Component {
                 type='date'
                 variant="outlined"
                 label="Start Dtae"
-                margin="normal"
+                margin="dense"
+                InputLabelProps={{ shrink: true }}
               />
             </Grid>
             <Grid item xs>
@@ -57,7 +59,39 @@ class Filter extends Component {
                 type='date'
                 variant="outlined"
                 label="End Dtae"
-                margin="normal"
+                margin="dense"
+                InputLabelProps={{ shrink: true }}
+              />
+            </Grid>
+          </Grid>
+          <Grid item xs>
+            <TextField
+              id="outlined-number"
+              label="Small"
+              type="number"
+              margin="dense"
+              variant="outlined"
+              InputLabelProps={{ shrink: true }}
+            />
+          </Grid>
+          <Grid item xs>
+            <TextField
+              id="outlined-number"
+              label="Medium"
+              type="number"
+              margin="dense"
+              variant="outlined"
+              InputLabelProps={{ shrink: true }}
+            />
+            <Grid />
+            <Grid item xs>
+              <TextField
+                id="outlined-number"
+                label="Large"
+                type="number"
+                margin="dense"
+                variant="outlined"
+                InputLabelProps={{ shrink: true }}
               />
             </Grid>
           </Grid>
