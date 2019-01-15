@@ -10,6 +10,7 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-geolocated": "^2.4.0",
+    "react-geosuggest": "^2.9.0",
     "react-google-autocomplete": "^1.0.18",
     "react-scripts": "1.1.5"
   },

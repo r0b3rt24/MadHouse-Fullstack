@@ -22,7 +22,7 @@ import Geosuggest from 'react-geosuggest';
 
 
 // filter is a card component resides in the sidebar
-class FilterD extends Component {
+class Filter extends Component {
   constructor(props) {
     super(props);
     this.state = {
