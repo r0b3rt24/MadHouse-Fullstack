@@ -23,7 +23,7 @@ import Autocomplete from 'react-google-autocomplete';
 
 
 // filter is a card component resides in the sidebar
-class Filter extends Component {
+class FilterD extends Component {
   constructor(props) {
     super(props);
     this.state = {
