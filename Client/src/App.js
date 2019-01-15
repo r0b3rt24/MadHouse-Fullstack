@@ -17,8 +17,7 @@ import ButtonAppBar from './NavBar';
 import MapContainer from './MapContainer';
 import "./App.css"
 import TextField from '@material-ui/core/TextField';
-import Autocomplete from 'react-google-autocomplete';
-
+import Geosuggest from 'react-geosuggest';
 
 
 
@@ -35,14 +34,7 @@ class FilterD extends Component {
       <div className="Filter">
 
         <form>
-          <Autocomplete
-            style={{ width: '90%' }}
-            onPlaceSelected={(place) => {
-              console.log(place);
-            }}
-            types={['(regions)']}
-            componentRestrictions={{ country: "ru" }}
-          />
+          <Geosuggest/>
           <Grid container spacing={24}>
             <Grid item xs={12}>
               <TextField
