@@ -32,7 +32,6 @@ class Filter extends Component {
   render() {
     return (
       <div className="Filter">
-
         <form>
           <Geosuggest/>
           <Grid container spacing={24}>
@@ -40,7 +39,6 @@ class Filter extends Component {
               <TextField
                 variant="outlined"
                 label="Where"
-                value='Madison'
                 margin="normal"
                 fullWidth
               /></Grid>
@@ -50,7 +48,6 @@ class Filter extends Component {
                 type='date'
                 variant="outlined"
                 label="Start Dtae"
-                defaultValue="2017-05-24"
                 margin="normal"
               />
             </Grid>
@@ -60,7 +57,6 @@ class Filter extends Component {
                 type='date'
                 variant="outlined"
                 label="End Dtae"
-                defaultValue="2017-05-25"
                 margin="normal"
               />
             </Grid>
