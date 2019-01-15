@@ -18,7 +18,7 @@ nav{
     display: block;
     height: 75px;
     line-height: 75px;
-    box-shadow: 20px 10px 40px rgba(131, 131, 131, 0.5);
+    box-shadow: 0px 10px 40px rgba(131, 131, 131, 0.5);
 
 
 }
@@ -26,11 +26,18 @@ nav{
 span{
     display: inline-block;
     vertical-align: middle;
-    padding-left: 30px;
-    color: #71bad3
+    
 }
 
 #logo-caption{
-    
+    padding-left: 30px;
     color: #71bad3;
+}
+
+.Filter{
+    height: 500px;
+    width: 520px;
+    background-color: #71bad3;
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 }
