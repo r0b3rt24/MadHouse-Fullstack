@@ -34,7 +34,7 @@ class Filter extends Component {
       <div className="Filter">
         <form>
           <Grid container spacing={24}>
-            <Geosuggest/>
+            <Geosuggest />
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -64,7 +64,7 @@ class Filter extends Component {
               />
             </Grid>
           </Grid>
-          <Grid item xs>
+          <container>
             <TextField
               id="outlined-number"
               label="Small"
@@ -73,8 +73,6 @@ class Filter extends Component {
               variant="outlined"
               InputLabelProps={{ shrink: true }}
             />
-          </Grid>
-          <Grid item xs>
             <TextField
               id="outlined-number"
               label="Medium"
@@ -83,8 +81,6 @@ class Filter extends Component {
               variant="outlined"
               InputLabelProps={{ shrink: true }}
             />
-            <Grid />
-            <Grid item xs>
               <TextField
                 id="outlined-number"
                 label="Large"
@@ -93,8 +89,7 @@ class Filter extends Component {
                 variant="outlined"
                 InputLabelProps={{ shrink: true }}
               />
-            </Grid>
-          </Grid>
+              </container>
         </form>
       </div>
     )
