@@ -6,5 +6,5 @@ import Start from './Start'
 import NavBar from './NavBar'
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<Start />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
