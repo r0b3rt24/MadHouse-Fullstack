@@ -19,6 +19,7 @@ const leaserSchema = new Schema({
     username: {
         type: String,
         required: [true, "username is required"],
+        unique: true
     },
     id: String,
     order: [{

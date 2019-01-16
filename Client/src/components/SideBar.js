@@ -48,6 +48,10 @@ class Filter extends Component {
     this.setState({ isOpen: false });
   };
 
+  checkNumberInput = () => {
+    
+  }
+
   render() {
     if (!this.state.isOpen) {
       return (

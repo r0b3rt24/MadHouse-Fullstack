@@ -19,6 +19,7 @@ const landlordSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
         ref: user,
+        unique: true
     },
     orders: [{
         type: Schema.Types.ObjectId,
