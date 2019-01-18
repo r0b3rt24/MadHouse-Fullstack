@@ -37,7 +37,25 @@ class Filter extends Component {
   }
 
   clearTheForm = () => {
+    this.setState(
+      {
+        isOpen: true,
+        Where: '',
+        Small: 0,
+        Medium: 0,
+        Large: 0,
+        startDate: null,
+        endDate: null,
+      }
+    )
+  }
 
+  updateForm = () =>{
+    this.setState({
+      Small: this.refs.Small.value,
+      Medium: this.refs.Medium.value,
+      Large: this.refs.Large.value,
+    })
   }
 
   handleFormOpen = () => {
@@ -107,33 +125,39 @@ class Filter extends Component {
                   <TextField
                     id="outlined-number"
                     label="Small"
+                    ref="Small"
                     type="number"
                     margin="none"
                     value={this.state.Small}
                     variant="outlined"
                     InputLabelProps={{ shrink: true }}
+                    onChange={this.updateForm}
                   />
                 </Grid>
                 <Grid item xs>
                   <TextField
                     id="outlined-number"
                     label="Medium"
+                    ref="Medium"
                     type="number"
                     margin="none"
                     value={this.state.Medium}
                     variant="outlined"
                     InputLabelProps={{ shrink: true }}
+                    onChange={this.updateForm}
                   />
                 </Grid>
                 <Grid item xs>
                   <TextField
                     id="outlined-number"
                     label="Large"
+                    ref="Large"
                     type="number"
                     margin="none"
                     value={this.state.Large}
                     variant="outlined"
                     InputLabelProps={{ shrink: true }}
+                    onChange={this.updateForm}
                   />
                 </Grid>
               </Grid>
@@ -143,6 +167,7 @@ class Filter extends Component {
                     className="FilterButton"
                     variant="outlined"
                     color="secondary"
+                    onClick={this.clearTheForm}
                   >
                     Clear
                   </Button>
