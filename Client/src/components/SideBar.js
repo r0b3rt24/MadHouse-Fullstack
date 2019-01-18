@@ -109,6 +109,7 @@ class Filter extends Component {
                     label="Small"
                     type="number"
                     margin="none"
+                    value={this.state.Small}
                     variant="outlined"
                     InputLabelProps={{ shrink: true }}
                   />
@@ -119,6 +120,7 @@ class Filter extends Component {
                     label="Medium"
                     type="number"
                     margin="none"
+                    value={this.state.Medium}
                     variant="outlined"
                     InputLabelProps={{ shrink: true }}
                   />
@@ -129,6 +131,7 @@ class Filter extends Component {
                     label="Large"
                     type="number"
                     margin="none"
+                    value={this.state.Large}
                     variant="outlined"
                     InputLabelProps={{ shrink: true }}
                   />
