@@ -1,6 +1,9 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema;
 
+/*
+ Add validators to the model
+*/
 
 const userSchema = new Schema({
     landlord: {
