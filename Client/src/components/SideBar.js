@@ -14,6 +14,7 @@ import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import placeholder from "../place-holder.jpg";
 import ButtonAppBar from "./NavBar";
+import Nav from "../Navigation";
 import MapContainer from "./MapContainer";
 import "./SideBar.css";
 import TextField from "@material-ui/core/TextField";
@@ -290,7 +291,6 @@ class CardList extends Component {
 
   render() {
     const listStyle = {
-      maxWidth: 600,
       minWidth: 300,
       display: "flex",
       overflow: "scroll",
@@ -366,7 +366,8 @@ class SideBar extends Component {
   render() {
     return (
       <div>
-        <ButtonAppBar />
+        {/* <ButtonAppBar /> */}
+        <Nav />
         <Grid container spacing={0}>
           <Grid item xs={4}>
             <CardList />

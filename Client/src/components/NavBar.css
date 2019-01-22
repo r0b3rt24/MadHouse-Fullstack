@@ -1,0 +1,20 @@
+.logoCap {
+    color: #71bad3;
+}
+
+.Appbar{
+    background-color: white;
+    color: white;
+    height: 50px;
+}
+
+.Toolbar{
+    background-color: white;
+    color: white;
+    height: 40px;
+}
+
+.MuiAppBar-colorPrimary-11 {
+    color: #fff;
+    background-color: #fff;
+}

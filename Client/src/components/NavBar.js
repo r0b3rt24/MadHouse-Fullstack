@@ -16,17 +16,22 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import Icon from '@material-ui/core/Icon';
+import './NavBar.css'
 
 const styles = {
   root: {
     flexGrow: 1,
+    color: 'white'
   },
   grow: {
     flexGrow: 1,
+    color: '#71bad3'
   },
   menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
+    // marginLeft: -12,
+    // marginRight: 20,
+    color: ''
   },
 };
 
@@ -34,14 +39,14 @@ function ButtonAppBar(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" className='Appbar'>
         <Toolbar>
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-            <MenuIcon />
+            <Icon>drafts</Icon>
           </IconButton>
-          <Typography variant="h6" color="inherit" className={classes.grow}>
+          <span color="inherit" className={classes.grow}>
             MadHouse
-          </Typography>
+          </span>
           <Button color="inherit">Login</Button>
           <PostStepper>Post My Place</PostStepper>
         </Toolbar>
@@ -191,4 +196,4 @@ ButtonAppBar.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ButtonAppBar);
+export default withStyles(styles)(ButtonAppBar); 

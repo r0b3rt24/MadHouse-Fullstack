@@ -1,36 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles, AppBar, Toolbar, Typography, IconButton, Icon } from '@material-ui/core';
+import { Button, Icon } from '@material-ui/core';
+import './Navigation.css';
+import Post from './components/PostStepper';
 
-const style = {
-    root: {
-        height: 60
-    },
-    type: {
-        fontFamily: 'Proxima-nova',
-        fontWeight: 400,
-        fontSize : 32,
-        color: "#71bad3"
+class Navigation extends React.Component{
+    render(){
+        return(
+            <nav>        
+                    <Icon className='nav-items' id='icon'>drafts</Icon> 
+                    <span className='nav-items' id='caption'>STOREASE</span>
+                    <div  id='spacer' />
+                    <Button className='nav-items'>Login/Register</Button>
+                    <Post className='nav-items'id='post'/>           
+            </nav>
+        )
     }
-
 }
 
-function nav(props) {
-    return(
-        <nav>
-            <span itemID='logo-caption'>STOREASE</span>
-
-        {/* <AppBar position="static" color="white">
-            <Toolbar>
-                <IconButton><Icon>drafts</Icon></IconButton>
-                <Typography style={style.type}>
-                    STOREASE
-                </Typography>
-            </Toolbar>
-        </AppBar> */}
-
-        </nav>
-    )
-}
-
-export default withStyles(style)(nav) ;
+export default Navigation;

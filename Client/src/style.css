@@ -14,25 +14,7 @@
     font-size: 72pt ;
 }
 
-nav{
-    display: block;
-    height: 75px;
-    line-height: 75px;
-    box-shadow: 0px 10px 40px rgba(131, 131, 131, 0.5);
 
-
-}
-
-span{
-    display: inline-block;
-    vertical-align: middle;
-    
-}
-
-#logo-caption{
-    padding-left: 30px;
-    color: #71bad3;
-}
 
 /* .Filter{
     height: 500px;
