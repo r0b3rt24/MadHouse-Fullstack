@@ -4,22 +4,21 @@
     font-family: proxima-nova, sans-serif;
     font-weight: 300;
     font-style: normal;
-    font-size: 32pt ;
+    font-size: 18pt;
 }
 
 .display{
     font-family: proxima-nova, sans-serif;
     font-weight: 300;
     font-style: normal;
-    font-size: 72pt ;
+    font-size: 36pt;
 }
 
-
-
-/* .Filter{
-    height: 500px;
-    width: 520px;
-    background-color: #71bad3;
-    border-radius: 10px;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-} */
+.wallpaper{
+    position: relative;
+    top: -200px;
+    display: block;
+    width: 100%;
+   
+    opacity: .55;
+}

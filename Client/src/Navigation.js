@@ -11,7 +11,7 @@ class Navigation extends React.Component{
                     <Icon className='nav-items' id='icon'>drafts</Icon> 
                     <span className='nav-items' id='caption'>STOREASE</span>
                     <div  id='spacer' />
-                    <Button className='nav-items'>Login/Register</Button>
+                    <Button className='nav-items' id='login'>Login/Register</Button>
                     <Post className='nav-items'id='post'/>           
             </nav>
         )

@@ -12,11 +12,13 @@ nav{
 }
 
 span{
-    font-family: 'proxima-nova';
+    /* font-family: 'proxima-nova'; */
+    
 }
 
 .nav-items{
     padding: 0 5px;
+    margin: 10px
 }
 
 
@@ -27,12 +29,7 @@ span{
 
 #caption{
     color: #71bad3;
-}
-
-button{
-    float: right;
-    vertical-align: middle;
-
+    font-size: 20pt;
 }
 
 #spacer{
@@ -45,10 +42,18 @@ button{
 
 @media (max-width: 420px){
     /* #caption{display: none} */
-    nav{
+    nav {
         height: 50px;
         padding: 0 10px;
 
+    }
+
+    #caption{
+        font-size: 18pt;
+    }
+
+    #login {
+        display: none;
     }
 
 }
