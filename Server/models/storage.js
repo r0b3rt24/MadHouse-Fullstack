@@ -1,11 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const validator = require("validator");
 
 const ContactSchema = new Schema({
     phone: Number,
     email: {
         type: String,
         required: [true, 'Name field is required'],
+        validate: [ validator.isEmail, "invalid email" ]
     },
     mail: String,
 })

@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema;
+const validator = require("validator");
 
 /*
  Add validators to the model
@@ -23,10 +24,12 @@ const userSchema = new Schema({
     firstname: {
         type: String, 
         required: true,
+        validate: [ validator.isAlpha, 'invalid name' ]
     },
     lastname: {
         type: String, 
         required: true,
+        validate: [ validator.isAlpha, 'invalid name' ]
     },
     registerdate: {
         type: Date,
@@ -35,10 +38,12 @@ const userSchema = new Schema({
     phone: {
         type: String, 
         required: true,
+        validate: [ validator.isInt, 'invalid phone number' ]
     },
     email: {
         type: String, 
         required: true,
+        validate: [ validator.isEmail, 'invalid email' ]
     }
 });
 
