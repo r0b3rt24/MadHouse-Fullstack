@@ -40,9 +40,19 @@ paths:
       responses:
         200:
           description: OK
-  
+
   /apartment/{id}:
+    parameters:
+      - name: id
+        in: path
+        description: ID of apartment to fetch
+        required: true
+        type: integer
+        format: int64
+      
     get:
+      tags:
+      - "apartment"
       summary: "Get the information of one apartment by its id" 
       responses:
         200:
@@ -72,6 +82,7 @@ paths:
         200:
           description: OK
           
+  
     post:
       tags:
       - "storage"
@@ -79,7 +90,24 @@ paths:
       responses:
         200:
           description: OK
+
   /storage/{id}:
+    parameters:
+      - name: id
+        in: path
+        description: ID of storage to fetch
+        required: true
+        type: integer
+        format: int64
+        
+    get:
+      tags:
+      - "storage"
+      summary: Get storage information by Id
+      responses:
+        200:
+          description: OK
+          
     put:
       tags:
       - "storage"
@@ -87,6 +115,15 @@ paths:
       responses:
         200:
           description: OK
+    
+    delete:
+      tags:
+      - "storage"
+      summary: "delete an storage by id" 
+      responses:
+        200:
+          description: OK
+    
 
   /user:
     post:
@@ -105,50 +142,6 @@ paths:
         required: true
         schema:
           $ref: "#/definitions/User"
-      responses:
-        default:
-          description: "successful operation"
-  /user/createWithArray:
-    post:
-      tags:
-      - "user"
-      summary: "Creates list of users with given input array"
-      description: ""
-      operationId: "createUsersWithArrayInput"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        description: "List of user object"
-        required: true
-        schema:
-          type: "array"
-          items:
-            $ref: "#/definitions/User"
-      responses:
-        default:
-          description: "successful operation"
-  /user/createWithList:
-    post:
-      tags:
-      - "user"
-      summary: "Creates list of users with given input array"
-      description: ""
-      operationId: "createUsersWithListInput"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        description: "List of user object"
-        required: true
-        schema:
-          type: "array"
-          items:
-            $ref: "#/definitions/User"
       responses:
         default:
           description: "successful operation"
